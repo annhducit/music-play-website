@@ -1,0 +1,29 @@
+{
+  "name": "music-streaming-website",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon --inspect ./bin/www",
+    "sass": "sass --watch --style=compressed src/scss/styles.scss src/public/stylesheets/styles.css"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "express-handlebars": "^7.0.1",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.15.0",
+    "fs-extra": "^11.1.1",
+    "http-errors": "~1.6.3",
+    "mongoose": "^7.0.0",
+    "morgan": "~1.9.1",
+    "multer": "^1.4.5-lts.1",
+    "multiparty": "^4.2.3",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "sass": "^1.58.3"
+  }
+}

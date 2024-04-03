@@ -1,0 +1,80 @@
+.songManagement-container {
+    display: grid;
+    place-items: center;
+    padding-top: 32px;
+}
+
+.songManagement_heading {
+    margin-bottom: 16px;
+    text-transform: uppercase;
+	background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font: {
+		size: 4rem ;
+	};
+}
+.songManagemnt_styled-table {
+    margin-top: 16px;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 1200px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+}
+
+.songManagemnt_styled-table thead tr {
+    background-color: #355C7D;
+    color: #ffffff;
+    text-align: left;
+}
+
+
+.songManagemnt_styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.songManagemnt_styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.songManagemnt_styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #355C7D;
+}
+
+.songManagemnt_styled-table th, td {
+    padding: 12px 15px;
+}
+.songManagemnt_active-row {
+    font-size:  1.6rem;
+    color: black;
+}
+.songManagemnt_index {
+    font-weight: bold;
+}
+.songManagement_btn-delete {
+    padding-left: 8px;
+    color: red;
+    font-size: 2rem;
+}
+.songManagement_btn-edit{
+    padding-left: 8px;
+
+    color: orange;
+    font-size: 2rem;
+}
+
+.songManagement_btn-infor{
+    color: blue;
+    font-size: 2rem;
+}
+.songManagement_btn-add{
+    padding-left: 8px;
+    font-size: 4rem;
+    margin-top: 16px;
+    color: #59e292
+}
+
+

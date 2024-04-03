@@ -1,0 +1,64 @@
+{{!-- 
+    id: handle javascript - required
+    header: required
+    data: render list of items
+--}}
+
+<div id="{{id}}" class='song-list'>
+    <h3 class='song-list-header'>
+        {{header}}
+        
+        {{#ifEqual id "playlists"}}
+            <div class="song-list-header-right">
+                <button class="song-list-btn">
+                    Create playlist
+                </button>
+                <div class='song-list-search'>
+                    <input type="text" class="song-list-search-input" placeholder="Search in playlists">
+                    <i class="song-list-search-icon fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+        {{/ifEqual}}
+    </h3>
+    <div class='song-list-content grid'>
+        <div class='song-list-row row gutter'>
+            {{#ifEqual display "playlists"}}
+                <div class='col l-4'>
+                    <div class='playlists_content-large'>
+                        <div>
+                            <h2 class='playlists_content-title'>Liked Songs</h2>
+                            <p class='playlists_content-title-like'>110 liked song</p>
+                        </div>
+                        <button class='playlists_song-play-btn' onclick="location.replace('/favorite')">
+                            <i
+                                onclick='handlerPlaySong(this)'
+                                class='fa-solid fa-circle-play icon_play-btn'
+                            ></i>
+                        </button>
+                    </div>
+                </div>
+                {{#each data}}
+                    <div class='col l-2'>
+                        {{> song-item data=. class="playlist" round="round"}}
+                    </div>
+                {{/each}}
+            {{/ifEqual}}
+
+            {{#ifEqual display "albums"}}
+                {{#each data}}
+                    <div class='col l-2'>
+                        {{> song-item data=. class="album"}}
+                    </div>
+                {{/each}}
+            {{/ifEqual}}
+
+            {{#unless display}}
+                {{#each data}}
+                    <div class='col l-2'>
+                        {{> song-item data=.}}
+                    </div>
+                {{/each}}
+            {{/unless}}
+        </div>
+    </div>
+</div>

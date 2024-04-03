@@ -1,0 +1,58 @@
+.searched-song {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    background-color: $white;
+    padding: 8px;
+    border-radius: $border-radius;
+}
+
+.searched-song-left {
+    display: flex;
+}
+
+.searched-song:hover {
+    box-shadow: $box-shadow;
+    transition: 0.6s;
+    cursor: pointer;
+    background-color: $hazy-dale;
+}
+
+.searched-song-image-details {
+    width: 40px;
+    height: 40px;
+}
+
+.searched-song-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 12px;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.searched-song-info .searched-song-name {
+    font-weight: 500;
+}
+
+.searched-song-info .searched-song-artist {
+    font-weight: 200;
+    color: #7e7c7c;
+}
+
+.searched-song-right {
+    display: flex;
+    align-items: center;
+}
+
+.searched-song-time {
+    margin-left: 32px;
+    font-size: 1.5rem;
+}
+
+.searched-song-icon-more {
+    margin-left: 16px;
+    font-size: 2rem;
+}

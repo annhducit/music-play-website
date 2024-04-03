@@ -1,0 +1,195 @@
+<html>
+    <head>
+        <title>{{title}}</title>
+        <link
+            rel='stylesheet'
+            href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css'
+            integrity='sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=='
+            crossorigin='anonymous'
+            referrerpolicy='no-referrer'
+        />
+        <link rel='stylesheet' href='/stylesheets/styles.css' />
+    </head>
+    <body>
+        <div class='main-container'>
+            <div class='main-body'>
+                <div class='main-sidebar'>
+                    <img
+                        class='main-sidebar-logo'
+                        src='/images/logo.jpg'
+                        alt='logo'
+                    />
+                    <div class='main-sidebar-nav'>
+                        <div class='main-sidebar-nav-item active'>
+                            <a href='/' class='main-sidebar-nav-link'>
+                                <i
+                                    class='main-sidebar-nav-icon fa-solid fa-house'
+                                ></i>
+                                <div class='main-sidebar-nav-text'>Home</div>
+                            </a>
+                        </div>
+                        <div class='main-sidebar-nav-item'>
+                            <a href='/playlists' class='main-sidebar-nav-link'>
+                                <i
+                                    class='main-sidebar-nav-icon fa-solid fa-table-list'
+                                ></i>
+                                <div
+                                    class='main-sidebar-nav-text'
+                                >Playlists</div>
+                            </a>
+                        </div>
+                        <div class='main-sidebar-nav-item'>
+                            <a href='/favorite' class='main-sidebar-nav-link'>
+                                <i
+                                    class='main-sidebar-nav-icon fa-brands fa-gratipay'
+                                ></i>
+                                <div class='main-sidebar-nav-text'>Favorite
+                                    songs</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class='main-right'>
+                    <div class='main-navigation'>
+                        <div class='main-navigation-left'>
+                            {{! <i
+                                class='main-navigation-go-back fa-solid fa-arrow-left'
+                            ></i>
+                            <i
+                                class='main-navigation-go-forward fa-solid fa-arrow-right'
+                            ></i> }}
+                            <div class='main-navigation-searchbar'>
+                                <input
+                                    type='text'
+                                    class='main-navigation-searchbar-input'
+                                    placeholder='What do you want to listen to?'
+                                />
+                                <i
+                                    class='main-navigation-searchbar-icon fa-solid fa-magnifying-glass'
+                                ></i>
+                            </div>
+                        </div>
+                        <div class='main-navigation-right'>
+                            <div
+                                class='main-navigation-user'
+                                data-id='{{user._id}}'
+                            >
+                                <img
+                                    class='main-navigation-avatar'
+                                    src='/images/profile/profile.jpg'
+                                    alt='avatar'
+                                />
+                                <div class='main-navigation-username'>
+                                    {{#if user}}
+                                        {{user.name}}
+                                    {{else}}
+                                        Welcome
+                                    {{/if}}
+                                </div>
+                                <div class='main-navigation-user-tooltip'>
+                                    <a
+                                        href='/profile'
+                                        class='main-navigation-user-tooltip-item'
+                                    >
+                                        Profile
+                                    </a>
+                                    <a
+                                        href='#'
+                                        class='main-navigation-user-tooltip-item'
+                                    >
+                                        Settings
+                                    </a>
+                                    <a
+                                        href='/logout'
+                                        class='main-navigation-user-tooltip-item'
+                                    >
+                                        Logout
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='main-content'>
+                        {{{body}}}
+                    </div>
+                </div>
+            </div>
+            <div class='row main-songbar'>
+                <div class='l-3 main-songbar-left'>
+                    <div class='main-songbar-image'>
+                        <div class='main-songbar-image-thumb'></div>
+                    </div>
+                    <div class='main-songbar-info'>
+                        <div class='main-songbar-song-name'></div>
+                        <div class='main-songbar-artist'></div>
+                    </div>
+                    <button>
+                        <i class='main-songbar-heart fa-regular fa-heart'></i>
+                    </button>
+                </div>
+                <div class='l-6 main-songbar-center'>
+                    <div class='main-songbar-player-control'>
+                        <div class='main-songbar-random'>
+                            <i class='fa-solid fa-shuffle'></i>
+                        </div>
+                        <div class='main-songbar-previous'>
+                            <i class='fa-solid fa-backward-step'></i>
+                        </div>
+                        <div class='main-songbar-play'>
+                            <i class='fa-solid fa-circle-play'></i>
+                            <i class='fa-solid fa-circle-pause'></i>
+                        </div>
+                        <div class='main-songbar-next'>
+                            <i class='fa-solid fa-forward-step'></i>
+                        </div>
+                        <div class='main-songbar-repeat'>
+                            <i class='fa-solid fa-rotate'></i>
+                        </div>
+                    </div>
+                    <div class='main-songbar-progress-block'>
+                        <div class='main-songbar-tracktime'>0:00</div>
+                        <input
+                            type='range'
+                            id='song-progress'
+                            class='main-songbar-progress'
+                            value='0'
+                            step='1'
+                            min='0'
+                            max='100'
+                        />
+                        <div class='main-songbar-duration'>0:00</div>
+                        <audio id='audio'></audio>
+                    </div>
+                </div>
+                <div class='l-3 main-songbar-right'>
+                    <a href='/lyrics/640c435c21b3cf15eb5016ce'>
+                        <i class='main-songbar-lyrics fa-solid fa-font'></i>
+                    </a>
+                    {{!-- {{/with}} --}}
+                    <div class='main-songbar-volume'>
+                        <i class='fa-solid fa-volume-high'></i>
+                        <i class='fa-solid fa-volume-xmark'></i>
+                    </div>
+                    <input
+                        type='range'
+                        id='volume-progress'
+                        class='main-songbar-volumn-progress'
+                        value='70'
+                        step='1'
+                        min='0'
+                        max='100'
+                    />
+                </div>
+            </div>
+        </div>
+
+        <script src='/javascripts/_modal.js'></script>
+        <script src='/javascripts/music-player.js'></script>
+        <script src='/javascripts/user.js'></script>
+        <script src='/javascripts/_slider.js'></script>
+        <script src='/javascripts/_song-list.js'></script>
+        <script src='/javascripts/_search-bar.js'></script>
+        <script src='/javascripts/_details-view.js'></script>
+        <script src='/javascripts/main.js'></script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+ {{#with data}}
+    <div class='lyric-container'>
+        <div class='lyric-background'>
+            <div class='lyric-image'>
+                <img src={{imageLink}} alt='' class='lyric_image-like' />
+            </div>
+            <div class='lyric_text'>
+                <p class='lyric lyric-heading'>
+                    Lyric
+                </p>
+                <h1 class='lyric lyric-name'>LYRIC SONGS</h1>
+                <p class='lyric lyric-author'>
+                    <b>{{artist}}</b></p>
+                <p class='lyric lyric-name-song'>
+                    <b>{{name}}</b>
+                </p>
+            </div>
+        </div>
+        <div class='grid wide'>
+            <div class="lyric_content">
+                <h2 class='lyric_content-details'>
+                   {{lyrics}}
+                </h2>
+            </div>
+        </div>
+    </div>
+ {{/with}}

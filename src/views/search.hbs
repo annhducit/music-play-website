@@ -1,0 +1,52 @@
+<div class='search-container'>
+    <div class='grid'>
+        <div class='row gutter'>
+            <div class='search-content-top'>
+                <button class='search-btn'>All</button>
+                <button class='search-btn'>Song</button>
+                <button class='search-btn'>Albums</button>
+                <button class='search-btn'>Playlist</button>
+            </div>
+
+        </div>
+        <div class='row gutter'>
+            <div class='col l-4'>
+                <h2 class="search-title">Top result</h2>
+                <div class='search-content-bottom'>
+                    {{#with topResults.[0] }}
+                        <div class='search-item-song'>
+                            <img
+                                src='{{imageLink}}'
+                                alt=''
+                                class='search-top-song-img'
+                            />
+                            <h2 class='search-name-song'>{{name}}</h2>
+                            <div class='search-song-title'>
+                                <p class='search-artist-song'>{{artist}}</p>
+                                <button class='search-song-btn'>Song</button>
+                                <div class='search-song-play'>
+                                    <button class='search-song_play-btn' data-id="{{_id}}">
+                                        <i
+                                            class='fa-solid fa-circle-play search-icon-play'
+                                        ></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    {{/with}}
+                </div>
+            </div>
+            <div class='col l-8'>
+                <h2 class="search-title">Songs</h2>
+                <div class="search-list"></div>
+                {{#each topResults}}
+                    {{> searched-song data=. }}
+                {{/each}}
+            </div>
+        </div>
+
+        {{> song-list id="albums" header="Albums" data=albums display="albums" }}
+    </div>
+</div>
+
+<script src="/javascripts/search.js"></script>

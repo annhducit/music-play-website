@@ -1,0 +1,92 @@
+.home-container {
+    padding: 0 32px;
+}
+
+.home-slider {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home-slider-content {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.home-slider-img {
+    width: 1200px;
+    height: 280px;
+    border-radius: $border-radius;
+}
+
+.home-slider-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &:hover .home-slider-button {
+        color: $slider-button-control;
+    }
+}
+
+.home-slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: transparent;
+    font-size: 3.2rem;
+
+    &:hover {
+        color: #fff !important;
+    }
+}
+
+.home-slider-prev {
+    left: 16px;
+}
+
+.home-slider-next {
+    right: 16px;
+}
+
+.home-good-day {
+    border-radius: $border-radius;
+    margin-top: 24px;
+}
+
+.home-good-day-header {
+    font-size: 2.4rem;
+}
+
+.home-good-day-item {
+    display: flex;
+    width: 100%;
+    background-color: $pale-blue;
+    border-radius: $border-radius;
+    margin-top: 16px;
+
+    &:hover {
+        background-color: $hazy-dale;
+    }
+}
+
+.home-good-day-img {
+    width: 80px;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+}
+
+.home-good-day-title {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}

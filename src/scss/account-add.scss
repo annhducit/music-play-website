@@ -1,0 +1,62 @@
+.addAccount-container {
+    display: grid;
+    place-items: center;
+    padding-top: 32px;
+}
+.addAccount-container form{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
+
+.addAccount-container input {
+    background-color: #eee;
+    border-radius: 10px;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+}
+
+.addAccount_heading {
+    margin-bottom: 16px;
+    text-transform: uppercase;
+	background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font: {
+		size: 4rem ;
+	};
+}
+
+.addAccount-container button {
+    position: relative;
+    border-radius: 20px;
+    border: 1px solid #4bb6b7;
+    background-color: #4bb6b7;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 10px;
+    padding: 12px 80px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    transition: 0.3s ease-in-out;
+}
+
+.addAccount-container button:hover {
+    letter-spacing: 3px;
+}
+
+.addAccount_btn-return{
+    justify-self: left;
+    padding-left: 8px;
+    font-size: 4rem;
+    margin-top: 16px;
+    color: #59a9e2
+}

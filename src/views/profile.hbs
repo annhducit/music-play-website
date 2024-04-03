@@ -1,0 +1,127 @@
+<div class='profile_user-container'>
+    <div class='profile_user-background'>
+        <div class='profile_user-image'>
+            <img src='/images/profile/profile.jpg' alt='' class='profile_user_image-like' />
+            <div class="profile_user-upload">
+                <label for="file">
+                    <i class="fa fa-camera icon_upload-profile"></i>
+                    <input type="file" id="file" style="display: none" name="image" accept="image/gif,image/jpeg,image/jpg,image/png" multiple="" data-original-title="Upload Photos">
+                </label>
+            </div>
+        </div>
+        <div class='profile_user_text'>
+            <p class='profile_user profile_user-heading'>
+            Profile
+            </p>
+             {{#if user}}
+                <h1 class='profile_user profile_user-name'>{{user.name}}</h1>
+                 <p><b>Giới tính: </b> {{user.gender}}</p>
+                 <p><b>Email: </b> {{user.email}}</p>
+            {{/if}}
+                
+                <div class="profile_user-author-block">
+                    <p class='profile_user profile_user-author'>
+                    <b>{{playlists.length}}</b> Public playlists
+                </div>
+        </div>
+    </div>
+    <div class='grid wide'>
+        <h1 class="profile_user-playlist-title">Public Playlists</h1>
+        <hr class="profile_user-line">
+        <div class="profile_user-playlist-item">
+            {{> song-list id="playlists" header="Playlists" data=playlists display="playlists"}}
+        </div>
+        <div class="profile_user-song-item">
+            <h1>Favorite Songs</h1>
+           <div class='playlist_bottom'>
+            <div class='playlist_heading-table'>
+                <div class='row'>
+                    <div class='col l-1'>
+                        <b>#</b>
+                    </div>
+                    <div class='col l-4'>
+                        <b>Title</b>
+                    </div>
+                    {{#if bookmark}}
+                        <div class='col l-3'>
+                            <b>Bookmark</b>
+                        </div>
+                    {{else}}
+                        <div class='col l-3'>
+                            <b>Album</b>
+                        </div>
+                    {{/if}}
+                    <div class='col l-3'>
+                        <b>Date added</b>
+                    </div>
+                    <div class='col l-1'>
+                        <i
+                            class='fa-sharp fa-regular fa-clock playlist_icon-time'
+                        ></i>
+                    </div>
+                </div>
+            </div>
+            <hr class='playlist-line' />
+            <div class="item-list">
+                {{#each songs}}
+                    <div class='playlist_item-song' data-id="{{_id}}">
+                        <div class='row playlist_item-song-general'>
+                            <div class='col l-1'>
+                                {{sum @index 1}}
+                            </div>
+                            <div class='col l-4'>
+                                <div class='playlist_item-song-details'>
+                                    <div class='playlist_item-song-details-left'>
+                                        <div class='playlist_item-block-img'>
+                                            <img
+                                                src='{{imageLink}}'
+                                                class='playlist_item-song-image'
+                                                alt=''
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class='playlist_item-song-details-right'>
+                                        <p><b>{{name}}</b></p>
+                                        <a href='#'>{{artist}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='col l-3'>
+                                {{#if ../playlist}}
+                                    <a href='#'>{{../playlist.name}}</a>
+                                {{/if}}
+                                {{#if ../bookmark}}
+                                    <div class='col l-3'>
+                                        <b>Favorite</b>
+                                    </div>
+                                {{/if}}
+                            </div>
+                            <div class='col l-3'>
+                                <span>11 hours ago</span>
+                            </div>
+                            <div class='col l-1'>
+                                {{#if ../bookmark}}
+                                    <i
+                                        id='heart'
+                                        class='fa-regular fa-heart playlist_icon-heart fa-solid'
+                                        style="color: lightcoral"
+                                        data-song-id="{{_id}}"
+                                    ></i>
+                                {{else}}
+                                    <i
+                                        id='heart'
+                                        class='fa-regular fa-heart playlist_icon-heart'
+                                        style="color: lightcoral"
+                                        data-song-id="{{_id}}"
+                                    ></i>
+                                {{/if}}
+                                <span class='playlist_item-song-time'>4:55</span>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+        </div>        
+    </div>
+</div>

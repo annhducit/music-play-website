@@ -1,0 +1,193 @@
+<div class='playlist-container'>
+    <div class='playlist-background'>
+        {{#if playlist}}
+            <div class='playlist-image'>
+                <img
+                    src='{{playlist.imageLink}}'
+                    alt=''
+                    class='playlist_image-like'
+                />
+            </div>
+
+            <div class='playlist_text'>
+                <p class='playlist playlist-heading'>
+                    Playlist
+                </p>
+                <h1 class='playlist playlist-name'>{{playlist.name}}</h1>
+                <p class='playlist-description'>{{playlist.description}}</p>
+                <p class='playlist playlist-author'>
+                    <b>{{user.name}}</b>
+                    | {{songs.length}} songs</p>
+            </div>
+        {{/if}}
+        {{#if album}}
+            <div class='playlist-image'>
+                <img
+                    src='{{album.imageLink}}'
+                    alt=''
+                    class='playlist_image-like'
+                />
+            </div>
+
+            <div class='playlist_text'>
+                <p class='playlist playlist-heading'>
+                    Album
+                </p>
+                <h1 class='playlist playlist-name'>{{album.name}}</h1>
+                <p class='playlist-description'>{{album.description}}</p>
+                <p class='playlist playlist-author'>
+                    <b>{{album.author}}</b>
+                    | {{songs.length}} songs</p>
+            </div>
+        {{/if}}
+        {{#if bookmark}}
+            <div class='playlist-image'>
+                <img
+                    src="/images/playlist_details.png"
+                    alt=''
+                    class='playlist_image-like'
+                />
+            </div>
+
+            <div class='playlist_text'>
+                <p class='playlist playlist-heading'>
+                    Bookmark
+                </p>
+                <h1 class='playlist playlist-name'>Favourite Songs</h1>
+                {{!-- <div class='playlist-description'></div> --}}
+                <p class='playlist playlist-author'>
+                    <b>{{bookmark.name}}</b>
+                    | {{songs.length}} songs</p>
+            </div>
+        {{/if}}
+    </div>
+    <div class='grid wide'>
+        <div class='playlist_between'>
+            <div class='playlist_between-left'>
+                <div class='playlist-play'>
+                    <button class='song_play-btn'>
+                        <i
+                            class='fa-solid fa-circle-play icon-play-btn-details'
+                        ></i>
+                    </button>
+
+                </div>
+                <span><i
+                        class='fa-solid fa-circle-down playlist_icon-download'
+                    ></i></span>
+                {{#if playlist}}
+                    <button class="song-list-delete">
+                        <i class="fa-solid fa-trash"></i> Delete
+                    </button>
+                {{/if}}
+            </div>
+            <div class='playlist_between-right'>
+                <div class='playlist_details-search'>
+                    <input
+                        type='text'
+                        class='playlist_details-search-input'
+                        placeholder='Search in playlist'
+                    />
+                    <i
+                        class='playlist_details-search-icon fa-solid fa-magnifying-glass'
+                    ></i>
+                </div>
+                <div class='playlist_fillter'>
+                    <p class='playlist_dateadded'>Date added</p>
+                </div>
+                <span><i
+                        class='fa-solid fa-caret-down playlist_icon-dropdown'
+                    ></i></span>
+            </div>
+        </div>
+        <div class='playlist_bottom'>
+            <div class='playlist_heading-table'>
+                <div class='row'>
+                    <div class='col l-1'>
+                        <b>#</b>
+                    </div>
+                    <div class='col l-4'>
+                        <b>Title</b>
+                    </div>
+                    {{#if bookmark}}
+                        <div class='col l-3'>
+                            <b>Bookmark</b>
+                        </div>
+                    {{else}}
+                        <div class='col l-3'>
+                            <b>Album</b>
+                        </div>
+                    {{/if}}
+                    <div class='col l-3'>
+                        <b>Date added</b>
+                    </div>
+                    <div class='col l-1'>
+                        <i
+                            class='fa-sharp fa-regular fa-clock playlist_icon-time'
+                        ></i>
+                    </div>
+                </div>
+            </div>
+            <hr class='playlist-line' />
+            <div class="item-list">
+                {{#each songs}}
+                    <div class='playlist_item-song' data-id="{{_id}}">
+                        <div class='row playlist_item-song-general'>
+                            <div class='col l-1'>
+                                {{sum @index 1}}
+                            </div>
+                            <div class='col l-4'>
+                                <div class='playlist_item-song-details'>
+                                    <div class='playlist_item-song-details-left'>
+                                        <div class='playlist_item-block-img'>
+                                            <img
+                                                src='{{imageLink}}'
+                                                class='playlist_item-song-image'
+                                                alt=''
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class='playlist_item-song-details-right'>
+                                        <p><b>{{name}}</b></p>
+                                        <a href='#'>{{artist}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='col l-3'>
+                                {{#if ../playlist}}
+                                    <a href='#'>{{../playlist.name}}</a>
+                                {{/if}}
+                                {{#if ../bookmark}}
+                                    <div class='col l-3'>
+                                        <b>Favorite</b>
+                                    </div>
+                                {{/if}}
+                            </div>
+                            <div class='col l-3'>
+                                <span>11 hours ago</span>
+                            </div>
+                            <div class='col l-1'>
+                                {{#if ../bookmark}}
+                                    <i
+                                        id='heart'
+                                        class='fa-regular fa-heart playlist_icon-heart fa-solid'
+                                        style="color: lightcoral"
+                                        data-song-id="{{_id}}"
+                                    ></i>
+                                {{else}}
+                                    <i
+                                        id='heart'
+                                        class='fa-regular fa-heart playlist_icon-heart'
+                                        style="color: lightcoral"
+                                        data-song-id="{{_id}}"
+                                    ></i>
+                                {{/if}}
+                                <span class='playlist_item-song-time'>4:55</span>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

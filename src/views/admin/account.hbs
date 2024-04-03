@@ -1,0 +1,69 @@
+<div class='songManagement-container'>
+    <h1 class='songManagement_heading'>Quản lí tài khoản</h1>
+    <p>Thông tin tất cả các tài khoản được hiển thị bên dưới, bạn có thể thực hiện
+        các thao tác đối với các tài khoản</p>
+    <div>
+         <a
+        class='songManagement_btn-add'
+        data-toggle='tooltip'
+        href='/admin'
+        title=''
+    ><i class="fa-sharp fa-solid fa-house-lock"></i></a>
+    <a
+        class='songManagement_btn-add'
+        data-toggle='tooltip'
+        href='/account/creat'
+        title=''
+    ><i class="fa-solid fa-square-plus"></i></a>
+    </div>
+   
+    <table class='songManagemnt_styled-table'>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên người dùng</th>
+                <th>Địa chỉ Email</th>
+                <th>Giới tính</th>
+                <th>Ngày sinh</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each data}}
+                <tr class='songManagemnt_active-row'>
+                    <td class='songManagemnt_index'>{{@index}}</td>
+                    <td>{{name}}</td>
+                    <td>{{email}}</td>
+                    <td>{{gender}}</td>
+                    <td>{{dateOfBirth}}</td>
+                    <td>
+                        <a
+                            class='songManagement_btn-infor'
+                            data-original-title='Detail'
+                            data-toggle='tooltip'
+                            href='/account/details/{{_id}}'
+                            title=''
+                        ><i class='fa-solid fa-circle-info'></i></a>
+
+                        <a
+                            class='songManagement_btn-edit'
+                            data-original-title='Edit'
+                            data-toggle='tooltip'
+                            href='/account/edit/{{_id}}'
+                            title=''
+                        ><i class='fa-solid fa-pen-to-square'></i></a>
+
+                        <a
+                            class='songManagement_btn-delete'
+                            data-toggle='tooltip'
+                            href='/account/delete/{{_id}}'
+                            title=''
+                        ><i class='fas fa-trash'></i></a>
+                    </td>
+
+                </tr>
+            {{/each}}
+        </tbody>
+
+    </table> 
+</div>

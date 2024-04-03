@@ -1,0 +1,43 @@
+<div class='addAccount-container'>
+    <a
+        class='addAccount_btn-return'
+        data-toggle='tooltip'
+        href='/admin/songs'
+    ><i class="fa-solid fa-left-long"></i></a>
+    <h1 class='addAccount_heading'>Thêm bài hát</h1>
+    <form action='/song/creat' method='post'>
+        <input type='text' name='name' placeholder='Name'  />
+        <input type='text' name='artist' placeholder='Artist'  />
+        <input type='text' name='lyrics' placeholder='Lyrics' />
+        <input type='text' list="categoryId" name="categoryId" placeholder='Category'>
+        <datalist name="categoryId" id="categoryId">
+            <option value="Pop"></option>
+            <option value="R&B"></option>
+            <option value="EDM"></option>
+            <option value="Acourstic"></option>
+        </datalist>
+        <input type='text' list="albumId" name="albumId" placeholder='Album'>
+        <datalist name="albumId" id="albumId">
+            {{#each data}}
+            <option value="{{name}}"></option>
+            {{/each}}
+        </datalist>
+        <button>Creat</button>
+        {{#if registerError}}
+            <div class="login_register-alert danger">
+                <i class="login_register-alert-close fa-solid fa-xmark"></i>
+                <div class="login_register-alert-text">
+                    {{registerError}}
+                </div>
+            </div>
+        {{/if}}
+        {{#if success}}
+            <div class="login_register-alert success">
+                <i class="login_register-alert-close fa-solid fa-xmark"></i>
+                <div class="login_register-alert-text">
+                    {{success}}
+                </div>
+            </div>
+        {{/if}}
+    </form>
+</div>

@@ -1,0 +1,78 @@
+<div class='admin_management-container'>
+    <div class='admin_management-background'>
+        {{!-- {{#if admin}} --}}
+            <div class='admin_management-image'>
+                <img
+                    {{!-- src='{{playlist.imageLink}}' --}}
+                    src='./images/admin.png'
+                    alt=''
+                    class='admin_management_image-like'
+                />
+            </div>
+            <div class='admin_management_text'>
+                <p class=''>
+                    Quản trị hệ thống
+                </p>    
+                <h1 class='admin_management-name'>Admin{{playlist.name}}</h1>
+                <p class='admin_management-description'>{{playlist.description}}</p>
+                <p class='admin_management-author'>
+                    <b>{{user.name}}</b></p>
+            </div>
+        {{!-- {{/if}} --}}
+    </div>
+
+    <div class="grid wide">
+        <h2 class="admin-management_heading-management">Danh mục quản lý hệ thống</h2>
+        <hr class="admin-management_line">
+        <div class="row gutter">
+            <div class="col l-6">
+                <div class='admin_management-songs'>
+                    <a href="/admin/songs" class="admin_management-songs-link">
+                    <div class='admin_management-songs-item'>
+                        <h3 class='admin_management-songs-heading'>
+                            Quản lý bài hát
+                        </h3>
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col l-6">
+                <div class='admin_management-songs'>
+                    <a href="/admin/playlists" class="admin_management-songs-link">
+                    <div class='admin_management-songs-item'>
+                        <h3 class='admin_management-songs-heading'>
+                            Quản lý playlist
+                        </h3>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row gutter">
+            <div class="col l-6">
+                <div class='admin_management-songs'>
+                    <a href="/admin/accounts" class="admin_management-songs-link">
+                    <div class='admin_management-songs-item'>
+                        <h3 class='admin_management-songs-heading'>
+                            Quản lý tài khoản
+                        </h3>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col l-6">
+                <div class='admin_management-songs'>
+                    <a href="/admin/albums" class="admin_management-songs-link">
+                    <div class='admin_management-songs-item'>
+                        <h3 class='admin_management-songs-heading'>
+                            Quản lý album
+                        </h3>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

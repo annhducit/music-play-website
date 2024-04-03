@@ -1,0 +1,24 @@
+{{> details-view }}
+
+<div class="modal">
+    <div class="modal-content">
+        <div class='details-view-confirm-modal'>
+            <h2 class="details-view-header">Confirm</h2>
+            <div class="details-view-body">
+                <div class="details-view-text">Are you sure you want to delete this playlist?</div>
+                <div class="details-view-group-btn">
+                    <button class="details-view-btn cancel">Cancel</button>
+                    <button class="details-view-btn delete" data-id="{{playlist._id}}">Confirm</button>
+                </div>
+            </div>
+        </div>
+
+        <button
+            class='close'
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+</div>
+
+<script src="/javascripts/playlist-details.js"></script>

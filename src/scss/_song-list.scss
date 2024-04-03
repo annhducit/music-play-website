@@ -1,0 +1,104 @@
+.song-list-header {
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    margin-top: 24px;
+    font-size: 2.4rem;
+}
+
+.song-list-header-right {
+    display: flex;
+}
+
+.song-list-btn, .song-list-delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 88px;
+    height: 40px;
+    border: 2px solid $pale-blue;
+    border-radius: $border-radius;
+    margin-right: 16px;
+    padding: 0 8px;
+    font-weight: 600;
+    transition: all .1s linear;
+
+    &:hover {
+        background-color: $pale-blue;
+    }
+}
+
+.song-list-delete {
+    margin: 0 0 0 16px;
+}
+
+.song-list-search {
+    display: flex;
+    align-items: center;
+    background-color: $pale-blue;
+    border-radius: $border-radius;
+    padding: 0 16px;
+}
+
+.song-list-search-input {
+    width: 160px;
+    height: 100%;
+    font-size: 1.4rem;
+}
+
+.song-list-search-icon {
+    padding: 4px;
+    border-radius: 50%;
+    font-size: 1.6rem;
+
+    &:hover {
+        background-color: $hazy-dale;
+    }
+}
+
+.song-list-filter {
+    display: flex;
+}
+
+.song-item {
+    background-color: $pale-blue;
+    padding: 16px;
+    margin-top: 16px;
+    border-radius: $border-radius;
+
+    &:hover {
+        background-color: $hazy-dale;
+    }
+}
+
+.song-item-img-block {
+    height: 150px;
+}
+
+.song-item-img {
+    width: 100%;
+    height: 100%;
+    border-radius: $border-radius;
+
+    &.song-item-img {
+        border-radius: 9999px;
+    }
+}
+
+.song-item-name {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+.song-item-artist {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 38.4px;
+    margin-top: 4px;
+    font-size: 1.4rem;
+}

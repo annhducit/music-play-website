@@ -1,0 +1,51 @@
+{{! 
+    data: required
+}}
+
+{{#if data}}
+    {{#ifEqual class 'playlist'}}
+        <a href='/playlists/{{_id}}'>
+            <div class='song-item {{class}}' data-id='{{_id}}'>
+                <div class='song-item-img-block'>
+                    <img
+                        class='song-item-img {{round}}'
+                        src='{{imageLink}}'
+                        alt='image'
+                    />
+                </div>
+                <h4 class='song-item-name'>{{name}}</h4>
+                <div class='song-item-artist'>
+                    {{description}}
+                </div>
+            </div>
+        </a>
+    {{/ifEqual}}
+
+    {{#ifEqual class 'album'}}
+        <a href='/albums/{{_id}}'>
+            <div class='song-item {{class}}' data-id='{{_id}}'>
+                <div class='song-item-img-block'>
+                    <img
+                        class='song-item-img'
+                        src='{{imageLink}}'
+                        alt='image'
+                    />
+                </div>
+                <h4 class='song-item-name'>{{name}}</h4>
+                <div class='song-item-artist'>
+                    {{description}}
+                </div>
+            </div>
+        </a>
+    {{/ifEqual}}
+
+    {{#unless class}}
+        <div class='song-item' data-id='{{_id}}'>
+            <div class='song-item-img-block'>
+                <img class='song-item-img' src='{{imageLink}}' alt='image' />
+            </div>
+            <h4 class='song-item-name'>{{name}}</h4>
+            <div class='song-item-artist'>{{artist}}</div>
+        </div>
+    {{/unless}}
+{{/if}}

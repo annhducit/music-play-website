@@ -1,0 +1,68 @@
+<div class='songManagement-container'>
+    <h1 class='songManagement_heading'>Quản lí Playlist</h1>
+    <p>Thông tin tất cả các playlist được hiển thị bên dưới, bạn có thể thực hiện
+        các thao tác đối với các playlist</p>
+    <div>
+        <a
+            class='songManagement_btn-add'
+            data-toggle='tooltip'
+            href='/admin'
+            title=''
+        ><i class="fa-sharp fa-solid fa-house-lock"></i></a>
+        <a
+            class='songManagement_btn-add'
+            data-toggle='tooltip'
+            href='/playlist/creat'
+            title=''
+        ><i class="fa-solid fa-square-plus"></i></a>
+    </div>
+    <table class='songManagemnt_styled-table'>
+        <thead>
+            <tr>
+                <th>Số thứ tự</th>
+                <th>Tên playlist</th>
+                <th>User Id</th>
+                <th>Song Id</th>
+                <th>Nghệ sĩ</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each data}}
+                <tr class='songManagemnt_active-row'>
+                    <td class='songManagemnt_index'>{{@index}}</td>
+                    <td>{{name}}</td>
+                    <td>{{userId}}</td>
+                    <td>{{songId}}</td>
+                    <td>{{artist}}</td>
+                    <td>
+                        <a
+                            class='songManagement_btn-infor'
+                            data-original-title='Detail'
+                            data-toggle='tooltip'
+                            href='/playlist/details/{{_id}}'
+                            title=''
+                        ><i class='fa-solid fa-circle-info'></i></a>
+
+                        <a
+                            class='songManagement_btn-edit'
+                            data-original-title='Edit'
+                            data-toggle='tooltip'
+                            href='/playlist/edit/{{_id}}'
+                            title=''
+                        ><i class='fa-solid fa-pen-to-square'></i></a>
+
+                        <a
+                            class='songManagement_btn-delete'
+                            data-toggle='tooltip'
+                            href='/playlist/delete/{{_id}}'
+                            title=''
+                        ><i class='fas fa-trash'></i></a>
+                    </td>
+
+                </tr>
+            {{/each}}
+        </tbody>
+
+    </table>
+</div>

@@ -1,0 +1,27 @@
+{{#with data}}
+    <div class='searched-song' data-id='{{_id}}'>
+        <div class='searched-song-left'>
+            <img
+                src='{{imageLink}}'
+                class='searched-song-image-details'
+                alt=''
+            />
+            <div class='searched-song-info'>
+                <p class='searched-song-name'>{{name}}</p>
+                <p class='searched-song-artist'>{{artist}}</p>
+            </div>
+        </div>
+        <div class='searched-song-right'>
+            <p class='searched-song-heart-icon'>
+                <i
+                    id='heart'
+                    onclick='handlerTymSong(this)'
+                    class='fa-regular fa-heart'
+                    style='color: lightcoral'
+                ></i>
+            </p>
+            <p class='searched-song-time'>3:17</p>
+            <i class='fa-solid fa-ellipsis searched-song-icon-more'></i>
+        </div>
+    </div>
+{{/with}}

@@ -1,0 +1,111 @@
+<div class='home-container'>
+    <div class='home-slider grid'>
+        <div id="home-slider" class='home-slider-content row'>
+            <div class='col l-12'>
+                <img
+                    class='home-slider-img'
+                    src='/images/slider1.png'
+                    alt='slider image'
+                />
+            </div>
+            <div class='col l-12'>
+                <img
+                    class='home-slider-img'
+                    src='/images/slider2.png'
+                    alt='slider image'
+                />
+            </div>
+            <div class='col l-12'>
+                <img
+                    class='home-slider-img'
+                    src='/images/slider3.png'
+                    alt='slider image'
+                />
+            </div>
+        </div>
+        <div class="home-slider-controls">
+            <div class="home-slider-prev home-slider-button">
+                <i class="fa-solid fa-circle-left"></i>
+            </div>
+            <div class="home-slider-next home-slider-button">
+                <i class="fa-solid fa-circle-right"></i>
+            </div>
+        </div>
+    </div>
+
+    <div id="home-good-day" class='home-good-day'>
+        <h3 class='home-good-day-header'>
+            Have a good day
+        </h3>
+        <div class='home-good-day-content grid'>
+            <div class='home-good-day-row row gutter'>
+                <div class='col l-4'>
+                    <div class='home-good-day-item'>
+                        <img
+                            class='home-good-day-img'
+                            src='/images/songs/emla.jpg'
+                            alt='image'
+                        />
+                        <div class='home-good-day-title'>MONO</div>
+                    </div>
+                </div>
+                <div class='col l-4'>
+                    <div class='home-good-day-item'>
+                        <img
+                            class='home-good-day-img'
+                            src='/images/songs/emla.jpg'
+                            alt='image'
+                        />
+                        <div class='home-good-day-title'>MONO</div>
+                    </div>
+                </div>
+                <div class='col l-4'>
+                    <div class='home-good-day-item'>
+                        <img
+                            class='home-good-day-img'
+                            src='/images/songs/emla.jpg'
+                            alt='image'
+                        />
+                        <div class='home-good-day-title'>MONO</div>
+                    </div>
+                </div>
+                <div class='col l-4'>
+                    <div class='home-good-day-item'>
+                        <img
+                            class='home-good-day-img'
+                            src='/images/songs/emla.jpg'
+                            alt='image'
+                        />
+                        <div class='home-good-day-title'>MONO</div>
+                    </div>
+                </div>
+                <div class='col l-4'>
+                    <div class='home-good-day-item'>
+                        <img
+                            class='home-good-day-img'
+                            src='/images/songs/emla.jpg'
+                            alt='image'
+                        />
+                        <div class='home-good-day-title'>MONO</div>
+                    </div>
+                </div>
+                <div class='col l-4'>
+                    <div class='home-good-day-item'>
+                        <img
+                            class='home-good-day-img'
+                            src='/images/songs/emla.jpg'
+                            alt='image'
+                        />
+                        <div class='home-good-day-title'>MONO</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> song-list id="top-songs" header="Top Songs" data=topSongs }}
+
+    {{> song-list id="recently-played" header="Recently Played" data=recentlyPlayed }}
+</div>
+
+<script src="/javascripts/home.js"></script>

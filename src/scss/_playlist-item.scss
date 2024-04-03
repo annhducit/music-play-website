@@ -1,0 +1,29 @@
+/// Playlist Item
+.playlists_content-small {
+    border-radius: 8px;
+    border-radius: $border-radius;
+    background-color: $pale-blue;
+
+    &:hover {
+        transition: 0.6s;
+        cursor: pointer;
+        background-color: $hazy-dale;
+    }
+}
+.playlists_content-small-block {
+    padding-top: 8px;
+    width: 160px;
+    height: 160px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+}
+
+.playlists_content-small-image {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.playlists_content-small-text {
+   padding: 24px 8px;
+}

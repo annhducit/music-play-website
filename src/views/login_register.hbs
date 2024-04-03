@@ -1,0 +1,170 @@
+<div class='login_register'>
+    <div class='login_register-container {{register}}' id='container'>
+        <div class='login_register-form-container register-container'>
+            <form action='/register' method='post'>
+                <h1>Register here</h1>
+                <input type='text' name='name' placeholder='Name' value="{{info.name}}" />
+                <input type='email' name='email' placeholder='Email' value="{{info.email}}" />
+                <div class='login_register-content'>
+                    <div class='login_register-checkbox'>
+                        <div>
+                            <input
+                                type='radio'
+                                name='gender'
+                                value='male'
+                                id='checkbox'
+                                {{#ifEqual info.gender "male"}}
+                                    checked
+                                {{/ifEqual}}
+                            />
+                            <label>Male</label>
+                        </div>
+                        <div>
+                            <input
+                                type='radio'
+                                name='gender'
+                                value='female'
+                                id='checkbox'
+                                {{#ifEqual info.gender "female"}}
+                                    checked
+                                {{/ifEqual}}
+                            />
+                            <label>Female</label>
+                        </div>
+                        <div>
+                            <input
+                                type='radio'
+                                name='gender'
+                                value='other'
+                                id='checkbox'
+                                {{#ifEqual info.gender "other"}}
+                                    checked
+                                {{/ifEqual}}
+                            />
+                            <label>Other</label>
+                        </div>
+                    </div>
+                </div>
+                <input
+                    type='date'
+                    name='dateOfBirth'
+                    placeholder='DayOfBirth'
+                    value="{{info.dateOfBirth}}"
+                />
+                <input type='password' name='password' placeholder='Password' />
+                <button>Register</button>
+                {{#if registerError}}
+                    <div class="login_register-alert danger">
+                        <i class="login_register-alert-close fa-solid fa-xmark"></i>
+                        <div class="login_register-alert-text">
+                            {{registerError}}
+                        </div>
+                    </div>
+                {{/if}}
+                {{#if success}}
+                    <div class="login_register-alert success">
+                        <i class="login_register-alert-close fa-solid fa-xmark"></i>
+                        <div class="login_register-alert-text">
+                            {{success}}
+                        </div>
+                    </div>
+                {{/if}}
+                {{!-- <span>Or use your account</span>
+                <div class='login_register-social-container'>
+                    <a href='#' class='login_register-social'><i
+                            class='lni lni-facebook-fill'
+                        ></i></a>
+                    <a href='#' class='login_register-social'><i
+                            class='lni lni-google'
+                        ></i></a>
+                </div> --}}
+            </form>
+        </div>
+
+        <div class='login_register-form-container login-container'>
+            <form action="/login" method='post'>
+                <h1>Login here</h1>
+                <input
+                    type='email'
+                    name='email'
+                    placeholder='Email'
+                    value="{{info.email}}"
+                />
+                <input
+                    type='password'
+                    name='password'
+                    placeholder='Password'
+                    value="{{info.password}}"
+                />
+                <div class='login_register-content'>
+                    <div class='login_register-checkbox'>
+                        <input
+                            type='checkbox'
+                            name='rememberMe'
+                            id='checkbox'
+                            {{#ifEqual info.rememberMe "on"}}
+                                checked
+                            {{/ifEqual}}
+                        />
+                        <label>Remember me</label>
+                    </div>
+                    <div class='login_register-link'>
+                        <a href=''>Forgot password?</a>
+                    </div>
+                </div>
+                <button>Login</button>
+                {{#if loginError}}
+                    <div class="login_register-alert danger">
+                        <i class="login_register-alert-close fa-solid fa-xmark"></i>
+                        <div class="login_register-alert-text">
+                            {{loginError}}
+                        </div>
+                    </div>
+                {{/if}}
+                {{!-- <span>Or use your account</span>
+                <div class='login_register-social-container'>
+                    <a href='#' class='login_register-social'><i
+                            class='lni lni-facebook-fill'
+                        ></i></a>
+                    <a href='#' class='login_register-social'><i
+                            class='lni lni-google'
+                        ></i></a>
+                </div> --}}
+            </form>
+        </div>
+
+        <div class='login_register-overlay-container'>
+            <div class='login_register-overlay'>
+                <div
+                    class='login_register-overlay-panel login_register-overlay-left'
+                >
+                    <h1 class='login_register-title'>Welcom Play Music</h1>
+                    <p>if you already have an account, login here and enjoy the
+                        moment</p>
+                    <button class='login_register-ghost' id='login'>Login
+                        <i class='lni lni-arrow-left login'></i>
+                    </button>
+                </div>
+                <div
+                    class='login_register-overlay-panel login_register-overlay-right'
+                >
+                    <h1 class='login_register-title'>Welcom Play Music</h1>
+                    <p>If you don't have an account yet, register now</p>
+                    <button class='login_register-ghost' id='register'>Register
+                        <i class='lni lni-arrow-right register'></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+    const registerButton = document.getElementById("register"); const
+    loginButton = document.getElementById("login"); const container =
+    document.getElementById("container");
+    registerButton.addEventListener("click",()=>{
+    container.classList.add("right-panel-active"); });
+    loginButton.addEventListener("click",()=>{
+    container.classList.remove("right-panel-active"); });
+</script>

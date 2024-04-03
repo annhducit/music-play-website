@@ -1,0 +1,52 @@
+<div class='playlists-container'>
+    {{> song-list id="playlists" header="Playlists" data=playlists display="playlists"}}
+</div>
+
+<div class="modal">
+    <div class="modal-content">
+        <div class='create-playlist_container'>
+            <div class='create-playlist'>
+                <form form="create-playlist" method="post" class="create-playlist-form">
+                    <div>
+                        <label class="create-playlist-lbl">Nhập tên playlist</label>
+                        <input
+                            type='text'
+                            name='name'
+                            class='create-playlist-name'
+                            placeholder='Nhập tên Playlist'
+                        />
+                    </div>
+                    <div>
+                        <label class="create-playlist-lbl">Mô tả</label>
+                        <input
+                            type='text'
+                            name='description'
+                            class='create-playlist-name'
+                            placeholder='Nhập mô tả'
+                        />
+                    </div>
+                    <div>
+                        <label class="create-playlist-lbl">Chọn hình ảnh cho playlist</label>
+                        <input
+                            type='file'
+                            name='file'
+                            class='create-playlist-image'
+                            placeholder='Chọn hình ảnh'
+                        />
+                    <div>
+                    </div>
+                        <button class='create-playlist-btn'>Tạo Playlist</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <button
+            class='close'
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+</div>
+
+<script src="/javascripts/playlists.js"></script>

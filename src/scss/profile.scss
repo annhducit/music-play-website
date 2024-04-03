@@ -1,0 +1,78 @@
+.profile_user-container {
+    height: auto;
+    width: 100%;
+    overflow-y: auto;
+}
+
+// Content top profile
+.profile_user-background {
+    background-image: $background-profile-linear;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    padding-left: 32px;
+}
+
+.profile_user-image {
+    width: 220px;
+    height: 220px;
+    box-shadow: $profile-boxsadow-image;
+    border-radius: 100%;
+    position: relative;
+}
+
+.profile_user_image-like {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%
+}
+.profile_user-upload {
+    position: absolute;
+    right: 5px;
+    top: 200px;
+
+}
+
+.profile_user_text {
+    padding-left: 16px;
+    padding-top: 8px;
+}
+
+.profile_user {
+    color: $white;
+}
+
+.profile_user-name {
+    font-size: 6rem;
+    padding-bottom: 32px;
+}
+
+// Upload photo
+.icon_upload-profile {
+    font-size: 20px;
+    color: $pale-blue;
+}
+
+// Bottom profile content
+.profile_user-playlist-title {
+    padding-top: 32px;
+}
+.profile_user-line {
+    margin-top: 4px;
+    margin-bottom: 16px;
+    border: $border-image-profile;
+}
+
+.profile_user-playlist {
+    padding-top: 32px;
+}
+
+.profile_user-playlist-item {
+    padding-top: 8px;
+    padding-bottom: 32px;
+}
+
+.profile_user-author-block {
+    margin-top: 16px;
+}

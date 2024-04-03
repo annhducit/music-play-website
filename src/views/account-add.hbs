@@ -1,0 +1,76 @@
+<div class='addAccount-container'>
+    <a
+        class='addAccount_btn-return'
+        data-toggle='tooltip'
+        href='/admin/accounts'
+    ><i class="fa-solid fa-left-long"></i></a>
+    <h1 class='addAccount_heading'>Thêm tài khoản</h1>
+    <form action='/account/creat' method='post'>
+        <input type='text' name='name' placeholder='Name' value="{{info.name}}" />
+        <input type='email' name='email' placeholder='Email' value="{{info.email}}" />
+        <div class='login_register-content'>
+            <div class='login_register-checkbox'>
+                <div>
+                    <input
+                        type='radio'
+                        name='gender'
+                        value='male'
+                        id='checkbox1'
+                        {{#ifEqual info.gender "male"}}
+                            checked
+                        {{/ifEqual}}
+                    />
+                    <label>Male</label>
+                </div>
+                <div>
+                    <input
+                        type='radio'
+                        name='gender'
+                        value='female'
+                        id='checkbox2'
+                        {{#ifEqual info.gender "female"}}
+                            checked
+                        {{/ifEqual}}
+                    />
+                    <label>Female</label>
+                </div>
+                <div>
+                    <input
+                        type='radio'
+                        name='gender'
+                        value='other'
+                        id='checkbox3'
+                        {{#ifEqual info.gender "other"}}
+                            checked
+                        {{/ifEqual}}
+                    />
+                    <label>Other</label>
+                </div>
+            </div>
+        </div>
+        <input
+            type='date'
+            name='dateOfBirth'
+            placeholder='DayOfBirth'
+            value="{{info.dateOfBirth}}"
+        />
+        <input type='password' name='password' placeholder='Password' />
+        <button>Creat</button>
+        {{#if registerError}}
+            <div class="login_register-alert danger">
+                <i class="login_register-alert-close fa-solid fa-xmark"></i>
+                <div class="login_register-alert-text">
+                    {{registerError}}
+                </div>
+            </div>
+        {{/if}}
+        {{#if success}}
+            <div class="login_register-alert success">
+                <i class="login_register-alert-close fa-solid fa-xmark"></i>
+                <div class="login_register-alert-text">
+                    {{success}}
+                </div>
+            </div>
+        {{/if}}
+    </form>
+</div>
